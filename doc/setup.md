@@ -9,7 +9,7 @@ khaiii는 C++14로 개발했으므로 이를 지원하는 컴파일러가 필요
 OS 및 버전 | 컴파일러 버전
 ---------|-----------
 CentOS 7.2 | gcc-5.3.1 (devtoolset-4)
-Ubuntu 16.04 | gcc-5.4.0
+Ubuntu 18.04 | gcc-5.4.0
 MacOS Mojave | LLVM-10.0.0
 
 ### 빌드 툴
@@ -105,6 +105,19 @@ Test project /home/khaiii/build
 Total Test time (real) =   0.03 sec
 ```
 
+### 트러블슈팅
+아래와 같은 오류 발생 시,
+```
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  locale::facet::_S_create_c_locale name not valid
+Aborted (core dumped)
+```
+다음 명령어들을 실행해 준다.
+```
+apt install language-pack-ko
+locale-gen en_US.UTF-8
+update-locale LANG=en_US.UTF-8
+```
 
 설치
 ----
